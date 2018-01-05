@@ -3,64 +3,64 @@ var $wHeight = $(window).height();
 var $wWidth = $(window).width();
 var $links = $('.link');
 var $menuBtn = $('.menu-icon');
-var $wScroll=$(window).scrollTop();
+var $wScroll = $(window).scrollTop();
 
-if($wWidth > 820){
+if ($wWidth > 820) {
     $('.links-container').slideDown(500);
 }
-$(window).resize(function () {
+$(window).resize(function() {
     var $wWidth = $(window).width();
-    if($wWidth > 820){
+    if ($wWidth > 820) {
         console.log('window width is > 820');
-        $('.links-container').fadeIn(300);
-    }else{
+        $('.links-container').fadeIn(800);
+    } else {
         $('.links-container').css(
-            'display','none'
-        )
+            'display', 'none'
+        );
     }
 
 });
 
-$(window).scroll(function(){
+$(window).scroll(function() {
     var $wScroll = $(window).scrollTop();
 
     var $aboutTitlePageTop = $('#about-title-page').offset().top;
-    var $rightAboutPageTop =  $('#about-page').offset().top;
-    if($wScroll > $aboutTitlePageTop *.5){
+    var $rightAboutPageTop = $('#about-page').offset().top;
+    if ($wScroll > $aboutTitlePageTop * 0.5) {
         $('#about-name').addClass('is-showing');
 
-    }else{
+    } else {
         $('#about-name').removeClass('is-showing');
     }
 
-    if($wScroll > $rightAboutPageTop*.5){
+    if ($wScroll > $rightAboutPageTop * 0.5) {
         $('.about-me').fadeIn(900);
-    }else{
+    } else {
         $('.about-me').fadeOut(500);
     }
 
     var $workTitlePageTop = $('#project-title-page').offset().top;
     var $projectPageTop = $('#project-page').offset().top;
-    if($wScroll > $workTitlePageTop *.6){
+    if ($wScroll > $workTitlePageTop * 0.6) {
         $('#work-name').addClass('is-showing');
-    }else{
+    } else {
         $('#work-name').removeClass('is-showing');
     }
 
-    if($wScroll > $projectPageTop*.7){
+    if ($wScroll > $projectPageTop * 0.7) {
         $('.projects').fadeIn(900);
-    }else{
+    } else {
         $('.projects').fadeOut(500);
     }
 
     var $wHeight = $(window).height();
-    if($wScroll > $wHeight){
+    if ($wScroll > $wHeight * 0.6) {
         $('.links-container').css({
-            'background-color':'rgba(0, 0, 0, 0.89)'
+            'background-color': 'rgba(0, 0, 0, 0.89)'
         });
-    }else {
+    } else {
         $('.links-container').css({
-            'background-color':'rgba(0, 0, 0, 0.0)'
+            'background-color': 'rgba(0, 0, 0, 0.0)'
         });
     }
 
@@ -68,13 +68,13 @@ $(window).scroll(function(){
 
 });
 
-$menuBtn.click(function(){
+$menuBtn.click(function() {
     var $wWidth = $(window).width();
-    if($wWidth >500 && $wWidth <820){
+    if ($wWidth > 500 && $wWidth < 820) {
         $('.links-container').animate({
             'width': 'toggle'
         });
-    }else {
+    } else {
         $('.links-container').slideToggle(300);
     }
 
@@ -83,18 +83,18 @@ $menuBtn.click(function(){
 $links.click(function() {
     var $wWidth = $(window).width();
 
-    if($wWidth >500 && $wWidth <820){
+    if ($wWidth > 500 && $wWidth < 820) {
         $('.links-container').animate({
             'width': 'toggle'
         });
-    }else if ($wWidth < 500) {
+    } else if ($wWidth < 500) {
         $('.links-container').slideToggle(300);
     }
 
     var href = $.attr(this, 'href');
     $root.animate({
         scrollTop: $(href).offset().top
-    },400, function () {
+    }, 400, function() {
         window.location.hash = href;
     });
     /*
