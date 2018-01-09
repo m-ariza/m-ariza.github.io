@@ -338,8 +338,6 @@ a {
 
 @media screen and (max-width: 800px) and (min-width: 0px) {
     /*small screen*/
-    .project-page{
-        Height: calc(100vh+200);
     .page {
         height: 200vh;
     }
