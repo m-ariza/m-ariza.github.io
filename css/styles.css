@@ -55,7 +55,7 @@ a {
     z-index: 99;
     width: 50px;
     height: 50px;
-    background-color: rgba(255, 255, 255, 0.103);
+    background-color: rgba(255, 255, 255, 0.685);
     border: solid 1px rgba(0, 0, 0, 0.103);
     -webkit-transition: all 500ms;
     transition: all 500ms;
@@ -119,14 +119,14 @@ a {
         width: 50px;
     }
     50% {
-        height: 480px;
+        height: 320px;
         width: 380px;
         margin: 30px;
     }
     100% {
         margin: 30px;
         width: 350px;
-        height: 450px;
+        height: 300px;
     }
 }
 
@@ -137,14 +137,14 @@ a {
         width: 50px;
     }
     50% {
-        height: 480px;
+        height: 320px;
         width: 380px;
         margin: 30px;
     }
     100% {
         margin: 30px;
         width: 350px;
-        height: 450px;
+        height: 300px;
     }
 }
 
@@ -155,7 +155,7 @@ a {
 
 @-webkit-keyframes shrink {
     0% {
-        height: 450px;
+        height: 350px;
         width: 350px;
         margin: 30px;
     }
@@ -168,7 +168,7 @@ a {
 
 @keyframes shrink {
     0% {
-        height: 450px;
+        height: 350px;
         width: 350px;
         margin: 30px;
     }
@@ -202,27 +202,22 @@ a {
     position: relative;
 }
 
-#work {
-    -ms-flex-item-align: center;
-    align-self: center;
-}
-
 .projects {
+    top: 100px;
     position: relative;
     text-align: center;
-    margin-bottom: 0;
     height: 100vh;
 }
 
-.projects div {
+.projects a {
     -webkit-transition: all 500ms ease-in-out 0ms;
     transition: all 500ms ease-in-out 0ms;
     -webkit-box-shadow: 0px 0px 0px 0px rgba(27, 0, 9, 0.363);
     box-shadow: 0px 0px 0px 0px rgba(27, 0, 9, 0.363);
-    opacity: 0.85;
+    opacity: 0.8;
 }
 
-.projects div:hover {
+.projects a:hover {
     opacity: 1;
     -webkit-transform: scale(1.05);
     transform: scale(1.05);
@@ -231,7 +226,6 @@ a {
 }
 
 .audio {
-    top: calc(50% - 125px);
     margin: auto 10px;
     display: inline-block;
     position: relative;
@@ -245,7 +239,6 @@ a {
 
 .afilms {
     margin: auto 10px;
-    top: calc(50% - 125px);
     display: inline-block;
     position: relative;
     background-position: center;
@@ -256,7 +249,17 @@ a {
     width: 350px;
 }
 
+.description {
+    display: block;
+    position: relative;
+}
+
+#about-me {
+    display: none;
+}
+
 #social-media {
+    display: none;
     bottom: 50px;
     position: fixed;
 }
